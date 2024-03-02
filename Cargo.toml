@@ -1,0 +1,7 @@
+[package]
+name = "yahoo"
+version = "0.1.0"
+edition = "2021"
+authors = ["Guilherme Gomes Cardoso <gunki394@gmail.com>"]
+
+[dependencies]
