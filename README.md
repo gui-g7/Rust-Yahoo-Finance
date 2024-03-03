@@ -5,6 +5,9 @@
 <p>
     Se mesmo em node, a yahoo finance precisa ser executada no lado do servidor, por que não facilitar essa API na linguagem mais segura do mundo e que ainda tem uma performance excelente? É a linguagem perfeita para o back-end.
 </p>
+<p>
+    Eu gostaria de adiantar também que essa é um biblioteca que depende de uma API não oficial.
+</p>
 <h2>
     Como usar:
 </h2>
