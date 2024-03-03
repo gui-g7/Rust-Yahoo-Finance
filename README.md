@@ -18,9 +18,9 @@
     <address>
         <h3>Referências</h3>
         <div id="rodape">
-            <a href="https://pypi.org/project/yfinance/" class="gitLink"><button><p>yfinance</p></button></a>
-            <a href="https://github.com/gadicc/node-yahoo-finance2" class="gitLink"><button><p>node-yahoo-finance-2</p></button></a>
-            <a href="https://github.com/pilwon/node-yahoo-finance" class="gitLink"><button><p>node-yahoo-finance</p></button></a>
+            <a href="https://pypi.org/project/yfinance/" class="gitLink"><p>yfinance</p><a>
+            <a href="https://github.com/gadicc/node-yahoo-finance2" class="gitLink"><p>node-yahoo-finance-2</p></a>
+            <a href="https://github.com/pilwon/node-yahoo-finance" class="gitLink"><p>node-yahoo-finance</p></a>
         </div>
     </address>
 </footer>
