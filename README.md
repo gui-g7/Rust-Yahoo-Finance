@@ -12,7 +12,7 @@
 <h2>
     Como usar:
 </h2>
-<p>Tentei deixar o mais próximo possível das outras APIs com a Yahoo em outras linguagens.</p>
+<p>Tentei deixar o mais próximo possível das outras APIs com a Yahoo em outras linguagens. Todas as funções principais são as mesmas.</p>
 <h2>
     Detalhes técnicos:
 </h2>
