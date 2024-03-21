@@ -8,10 +8,11 @@
 <p>
     Eu gostaria de adiantar também que essa é um biblioteca que depende de uma API não oficial.
 </p>
-<p>ta dando trabalho</p>
+<p></p>
 <h2>
     Como usar:
 </h2>
+<p>Tentei deixar o mais próximo possível das outras APIs com a Yahoo em outras linguagens.</p>
 <h2>
     Detalhes técnicos:
 </h2>
