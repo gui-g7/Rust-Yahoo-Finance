@@ -1,5 +1,5 @@
 <button id="theme-toggle"></button>
-<h1>
+<h1> 
     Em Python a yfinance, em JS ( Node ) a yahoo-finance e yahoo-finance2, e em Rust, o que você verá a seguir.
 </h1>
 <p>
