@@ -1,28 +1,121 @@
-<button id="theme-toggle"></button>
-<h1> 
-    Em Python a yfinance, em JS ( Node ) a yahoo-finance e yahoo-finance2, e em Rust, o que você verá a seguir.
-</h1>
-<p>
-    Se mesmo em node, a yahoo finance precisa ser executada no lado do servidor, por que não facilitar essa API na linguagem mais segura do mundo e que ainda tem uma performance excelente? É a linguagem perfeita para o back-end.
-</p>
-<p>
-    Eu gostaria de adiantar também que essa é um biblioteca que depende de uma API não oficial.
-</p>
-<p></p>
-<h2>
-    Como usar:
-</h2>
-<p>Tentei deixar o mais próximo possível das outras APIs com a Yahoo em outras linguagens. Todas as funções principais são as mesmas.</p>
-<h2>
-    Detalhes técnicos:
-</h2>
-<footer>
-    <address>
-        <h3>Referências</h3>
-        <div id="rodape">
-            <a href="https://pypi.org/project/yfinance/" class="gitLink"><p>yfinance</p><a>
-            <a href="https://github.com/gadicc/node-yahoo-finance2" class="gitLink"><p>node-yahoo-finance-2</p></a>
-            <a href="https://github.com/pilwon/node-yahoo-finance" class="gitLink"><p>node-yahoo-finance</p></a>
-        </div>
-    </address>
-</footer>
+
+# 📈 Yahoo Finance
+
+Uma biblioteca em **Rust** para buscar **cotações e dividendos** de ativos financeiros usando a API do **Yahoo Finance**.  
+
+🚀 Fácil de usar, sem necessidade de credenciais!  
+
+---
+
+## 📦 Instalação  
+
+Adicione a biblioteca ao seu projeto **Cargo.toml**:  
+
+```toml
+[dependencies]
+yahoo_finance_rust = "0.1"
+```
+
+Se estiver testando **localmente**, use:  
+
+```toml
+[dependencies]
+yahoo_finance_rust = { path = "../yahoo_finance_rust" }
+```
+
+---
+
+## 🔍 **Como Usar?**  
+
+### 📌 1️⃣ Buscar Preços de Ações  
+
+```rust
+use yahoo_finance_rust::client::YahooFinanceClient;
+
+fn main() {
+    match YahooFinanceClient::get_stock_data("AAPL", "1d") {
+        Ok(data) => println!("{:?}", data),
+        Err(e) => eprintln!("Erro ao buscar dados: {}", e),
+    }
+}
+```
+
+---
+
+### 📌 2️⃣ Buscar Dividendos de uma Empresa  
+
+```rust
+use yahoo_finance_rust::client::YahooFinanceClient;
+
+fn main() {
+    let symbol = "AAPL"; // Apple Inc.
+    let interval = "1mo";
+
+    match YahooFinanceClient::get_dividends(symbol, interval) {
+        Ok(dividends) => {
+            if dividends.is_empty() {
+                println!("Nenhum dividendo encontrado para {}.", symbol);
+            } else {
+                println!("📈 Dividendos de {}:", symbol);
+                for (date, amount) in dividends {
+                    println!("📅 Data: {} - 💰 Valor: ${:.2}", date, amount);
+                }
+            }
+        }
+        Err(e) => eprintln!("Erro ao buscar dividendos: {}", e),
+    }
+}
+```
+
+---
+
+## 🌍 **Exemplos de Ações Internacionais**  
+
+A biblioteca suporta ações de **diversos países**, basta usar os **códigos corretos**:
+
+| 🌍 País  | 📈 Bolsa       | 🎯 Exemplo de Ativo |
+|---------|--------------|------------------|
+| 🇺🇸 EUA      | Nasdaq/NYSE | `AAPL` (Apple) |
+| 🇧🇷 Brasil   | B3          | `VALE3.SA` (Vale) |
+| 🇩🇪 Alemanha | Xetra       | `BMW.DE` (BMW) |
+| 🇯🇵 Japão    | TSE         | `7203.T` (Toyota) |
+
+---
+
+## ⚠️ **Erros Comuns e Soluções**  
+
+### ❌ **Erro: "Too Many Requests" (429)**  
+🔹 O Yahoo Finance pode bloquear IPs temporariamente se houver **muitas requisições seguidas**.  
+
+✅ **Soluções:**  
+- **Aguarde alguns minutos** para o bloqueio expirar  
+- **Use uma VPN** ou **troque de rede**  
+- **Aumente o tempo de espera entre requisições** (`thread::sleep(Duration::from_secs(5))`)  
+
+---
+
+## 🛠️ **Contribuindo**  
+
+Se quiser contribuir com melhorias, siga os passos:  
+
+```sh
+git clone https://github.com/seu-usuario/yahoo_finance_rust.git
+cd yahoo_finance_rust
+cargo test
+```
+
+Sugestões são bem-vindas! 🚀  
+
+---
+
+## 📜 **Licença**  
+
+Este projeto está licenciado sob a **MIT License**.  
+
+---
+
+## ⭐ **Gostou?**  
+
+Se este projeto te ajudou, **deixe uma estrela no GitHub!** ⭐🚀  
+
+[🔗 Repositório no GitHub](https://github.com/gui-g7/Rust-Yahoo-Finance)
