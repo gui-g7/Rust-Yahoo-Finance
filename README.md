@@ -13,14 +13,14 @@ Adicione a biblioteca ao seu projeto **Cargo.toml**:
 
 ```toml
 [dependencies]
-yahoo_finance_rust = "0.1"
+yahoo_finance = "0.1"
 ```
 
 Se estiver testando **localmente**, use:  
 
 ```toml
 [dependencies]
-yahoo_finance_rust = { path = "../yahoo_finance_rust" }
+yahoo_finance_rust = { path = "../yahoo_finance" }
 ```
 
 ---
